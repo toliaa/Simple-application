@@ -1,6 +1,7 @@
 #pragma once
 
-#include "ArithmeticProgression.h" // Подключаем заголовочный файл для второй формы
+#include "CheckEquilateralTriangle.h" // Додайте цей рядок
+#include "ArithmeticProgression.h"
 
 namespace expressionvalue1 {
 
@@ -119,6 +120,7 @@ namespace expressionvalue1 {
                // 
                resources->ApplyResources(this->checkEquilateralTriangleToolStripMenuItem, L"checkEquilateralTriangleToolStripMenuItem");
                this->checkEquilateralTriangleToolStripMenuItem->Name = L"checkEquilateralTriangleToolStripMenuItem";
+               this->checkEquilateralTriangleToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::checkEquilateralTriangleToolStripMenuItem_Click); // Додайте цей рядок
                // 
                // accessControlDatabaseToolStripMenuItem
                // 
@@ -162,12 +164,20 @@ namespace expressionvalue1 {
 
     private:
         System::Void arithmeticProgressionSumToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
-            // Создаем экземпляр второй формы и отображаем её
+
             expressionvalue1::ArithmeticProgressionForm^ myForm = gcnew expressionvalue1::ArithmeticProgressionForm();
 
             myForm->Show();
         }
     private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {
     }
-};
+
+    private:
+        System::Void checkEquilateralTriangleToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+
+            EquilateralTriangleChecker::EquilateralTriangleCheckerForm^ myForm = gcnew EquilateralTriangleChecker::EquilateralTriangleCheckerForm();
+
+            myForm->Show();
+        }
+    };
 }
