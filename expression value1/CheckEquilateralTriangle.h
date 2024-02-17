@@ -65,7 +65,7 @@ namespace EquilateralTriangleChecker {
                this->textBoxC->TabIndex = 2;
                this->textBoxC->Text = L"0";
                // 
-               // labelResult
+               /// labelResult
                // 
                this->labelResult->AutoSize = true;
                this->labelResult->Location = System::Drawing::Point(16, 119);
