@@ -159,6 +159,9 @@
     <EmbeddedResource Include="ArithmeticProgression.resx">
       <DependentUpon>ArithmeticProgression.h</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PythagoreanNumbers.resx">
+      <DependentUpon>PythagoreanNumbers.h</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

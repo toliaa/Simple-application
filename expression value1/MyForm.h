@@ -3,6 +3,7 @@
 #include "CheckEquilateralTriangle.h" 
 #include "ArithmeticProgression.h"
 #include "AccessControlDatabase.h"
+#include "PythagoreanNumbers.h"
 
 namespace expressionvalue1 {
     using namespace System::Diagnostics;
@@ -85,7 +86,7 @@ namespace expressionvalue1 {
                this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(1) { this->menuToolStripMenuItem });
                this->menuStrip1->Location = System::Drawing::Point(0, 0);
                this->menuStrip1->Name = L"menuStrip1";
-               this->menuStrip1->Size = System::Drawing::Size(686, 30);
+               this->menuStrip1->Size = System::Drawing::Size(686, 28);
                this->menuStrip1->TabIndex = 3;
                this->menuStrip1->Text = L"menuStrip1";
                this->menuStrip1->ItemClicked += gcnew System::Windows::Forms::ToolStripItemClickedEventHandler(this, &MyForm::menuStrip1_ItemClicked);
@@ -98,7 +99,7 @@ namespace expressionvalue1 {
                        this->printPythagoreanNumbersToolStripMenuItem, this->sumBetweenMinMaxToolStripMenuItem, this->countCharactersBeforeColonToolStripMenuItem
                });
                this->menuToolStripMenuItem->Name = L"menuToolStripMenuItem";
-               this->menuToolStripMenuItem->Size = System::Drawing::Size(57, 26);
+               this->menuToolStripMenuItem->Size = System::Drawing::Size(57, 24);
                this->menuToolStripMenuItem->Text = L"Apps";
                // 
                // expressionValueToolStripMenuItem
@@ -134,9 +135,11 @@ namespace expressionvalue1 {
                // 
                // printPythagoreanNumbersToolStripMenuItem
                // 
+               this->printPythagoreanNumbersToolStripMenuItem->BackColor = System::Drawing::Color::LightBlue;
                this->printPythagoreanNumbersToolStripMenuItem->Name = L"printPythagoreanNumbersToolStripMenuItem";
                this->printPythagoreanNumbersToolStripMenuItem->Size = System::Drawing::Size(295, 26);
                this->printPythagoreanNumbersToolStripMenuItem->Text = L"Print Pythagorean Numbers";
+               this->printPythagoreanNumbersToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::printPythagoreanNumbersToolStripMenuItem_Click);
                // 
                // sumBetweenMinMaxToolStripMenuItem
                // 
@@ -264,7 +267,7 @@ namespace expressionvalue1 {
    
 
 
- private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {
+     private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {
     }
 
     private:
@@ -288,11 +291,24 @@ namespace expressionvalue1 {
     }
 
 
-    private: System::Void accessControlDatabaseToolStripMenuItem_Click_1(System::Object^ sender, System::EventArgs^ e) {
-    AccessControlApp::AccessDatabaseForm^ myForm = gcnew AccessControlApp::AccessDatabaseForm();
+    private: 
+        System::Void accessControlDatabaseToolStripMenuItem_Click_1(System::Object^ sender, System::EventArgs^ e) {
+              
+             AccessControlApp::AccessDatabaseForm^ myForm = gcnew AccessControlApp::AccessDatabaseForm();
 
-    myForm->Show();
-}
+             myForm->Show();
+     }
+
+  private: System::Void printPythagoreanNumbersToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+      PythagoreanNumbersApp::MainForm^ myForm = gcnew PythagoreanNumbersApp::MainForm();
+
+      myForm->Show();
+  }
+
+
+
+
+
 
 private: System::Void toolStripStatusLabel1_Click(System::Object^ sender, System::EventArgs^ e) {
 }
@@ -310,6 +326,7 @@ private: System::Void linkLabel3_LinkClicked(System::Object^ sender, System::Win
 }
 private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
 }
+
 };
 
 
