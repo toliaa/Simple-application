@@ -1,7 +1,8 @@
 #pragma once
 
-#include "CheckEquilateralTriangle.h" // Додайте цей рядок
+#include "CheckEquilateralTriangle.h" 
 #include "ArithmeticProgression.h"
+#include "AccessControlDatabase.h"
 
 namespace expressionvalue1 {
 
@@ -56,12 +57,12 @@ namespace expressionvalue1 {
                this->menuToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
                this->expressionValueToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
                this->arithmeticProgressionSumToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-               this->statusStrip1 = (gcnew System::Windows::Forms::StatusStrip());
                this->checkEquilateralTriangleToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
                this->accessControlDatabaseToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
                this->printPythagoreanNumbersToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
                this->sumBetweenMinMaxToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
                this->countCharactersBeforeColonToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+               this->statusStrip1 = (gcnew System::Windows::Forms::StatusStrip());
                this->menuStrip1->SuspendLayout();
                this->SuspendLayout();
                // 
@@ -87,6 +88,7 @@ namespace expressionvalue1 {
                this->menuStrip1->ImageScalingSize = System::Drawing::Size(20, 20);
                this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(1) { this->menuToolStripMenuItem });
                this->menuStrip1->Name = L"menuStrip1";
+               this->menuStrip1->ItemClicked += gcnew System::Windows::Forms::ToolStripItemClickedEventHandler(this, &MyForm::menuStrip1_ItemClicked);
                // 
                // menuToolStripMenuItem
                // 
@@ -110,22 +112,19 @@ namespace expressionvalue1 {
                this->arithmeticProgressionSumToolStripMenuItem->Name = L"arithmeticProgressionSumToolStripMenuItem";
                this->arithmeticProgressionSumToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::arithmeticProgressionSumToolStripMenuItem_Click);
                // 
-               // statusStrip1
-               // 
-               resources->ApplyResources(this->statusStrip1, L"statusStrip1");
-               this->statusStrip1->ImageScalingSize = System::Drawing::Size(20, 20);
-               this->statusStrip1->Name = L"statusStrip1";
-               // 
                // checkEquilateralTriangleToolStripMenuItem
                // 
                resources->ApplyResources(this->checkEquilateralTriangleToolStripMenuItem, L"checkEquilateralTriangleToolStripMenuItem");
+               this->checkEquilateralTriangleToolStripMenuItem->BackColor = System::Drawing::Color::PaleTurquoise;
                this->checkEquilateralTriangleToolStripMenuItem->Name = L"checkEquilateralTriangleToolStripMenuItem";
-               this->checkEquilateralTriangleToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::checkEquilateralTriangleToolStripMenuItem_Click); // Додайте цей рядок
+               this->checkEquilateralTriangleToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::checkEquilateralTriangleToolStripMenuItem_Click);
                // 
                // accessControlDatabaseToolStripMenuItem
                // 
                resources->ApplyResources(this->accessControlDatabaseToolStripMenuItem, L"accessControlDatabaseToolStripMenuItem");
+               this->accessControlDatabaseToolStripMenuItem->BackColor = System::Drawing::Color::LightCyan;
                this->accessControlDatabaseToolStripMenuItem->Name = L"accessControlDatabaseToolStripMenuItem";
+               this->accessControlDatabaseToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::accessControlDatabaseToolStripMenuItem_Click_1);
                // 
                // printPythagoreanNumbersToolStripMenuItem
                // 
@@ -141,6 +140,12 @@ namespace expressionvalue1 {
                // 
                resources->ApplyResources(this->countCharactersBeforeColonToolStripMenuItem, L"countCharactersBeforeColonToolStripMenuItem");
                this->countCharactersBeforeColonToolStripMenuItem->Name = L"countCharactersBeforeColonToolStripMenuItem";
+               // 
+               // statusStrip1
+               // 
+               resources->ApplyResources(this->statusStrip1, L"statusStrip1");
+               this->statusStrip1->ImageScalingSize = System::Drawing::Size(20, 20);
+               this->statusStrip1->Name = L"statusStrip1";
                // 
                // MyForm
                // 
@@ -178,6 +183,28 @@ namespace expressionvalue1 {
             EquilateralTriangleChecker::EquilateralTriangleCheckerForm^ myForm = gcnew EquilateralTriangleChecker::EquilateralTriangleCheckerForm();
 
             myForm->Show();
+        
         }
-    };
+
+    private:
+        System::Void accessControlDatabaseToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+
+            AccessControlApp::AccessDatabaseForm^ myForm = gcnew AccessControlApp::AccessDatabaseForm();
+
+            myForm->Show();
+        }
+       
+    private: System::Void menuStrip1_ItemClicked(System::Object^ sender, System::Windows::Forms::ToolStripItemClickedEventArgs^ e) {
+    }
+
+
+    private: System::Void accessControlDatabaseToolStripMenuItem_Click_1(System::Object^ sender, System::EventArgs^ e) {
+    AccessControlApp::AccessDatabaseForm^ myForm = gcnew AccessControlApp::AccessDatabaseForm();
+
+    myForm->Show();
 }
+};
+
+
+}
+

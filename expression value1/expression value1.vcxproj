@@ -119,12 +119,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="AccessControlDatabase.cpp" />
     <ClCompile Include="CheckEquilateralTriangle.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MyForm.cpp" />
     <ClCompile Include="MyForm1.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AccessControlDatabase.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="CheckEquilateralTriangle.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -136,6 +140,9 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="AccessControlDatabase.resx">
+      <DependentUpon>AccessControlDatabase.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CheckEquilateralTriangle.resx">
       <DependentUpon>CheckEquilateralTriangle.h</DependentUpon>
     </EmbeddedResource>
