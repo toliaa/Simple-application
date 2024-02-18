@@ -4,6 +4,7 @@
 #include "ArithmeticProgression.h"
 #include "AccessControlDatabase.h"
 #include "PythagoreanNumbers.h"
+#include "SumBetweenMinMax.h"
 
 namespace expressionvalue1 {
     using namespace System::Diagnostics;
@@ -143,9 +144,11 @@ namespace expressionvalue1 {
                // 
                // sumBetweenMinMaxToolStripMenuItem
                // 
+               this->sumBetweenMinMaxToolStripMenuItem->BackColor = System::Drawing::Color::DodgerBlue;
                this->sumBetweenMinMaxToolStripMenuItem->Name = L"sumBetweenMinMaxToolStripMenuItem";
                this->sumBetweenMinMaxToolStripMenuItem->Size = System::Drawing::Size(295, 26);
                this->sumBetweenMinMaxToolStripMenuItem->Text = L"Sum Between Min Max";
+               this->sumBetweenMinMaxToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::sumBetweenMinMaxToolStripMenuItem_Click);
                // 
                // countCharactersBeforeColonToolStripMenuItem
                // 
@@ -299,10 +302,20 @@ namespace expressionvalue1 {
              myForm->Show();
      }
 
-  private: System::Void printPythagoreanNumbersToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
-      PythagoreanNumbersApp::MainForm^ myForm = gcnew PythagoreanNumbersApp::MainForm();
+  private: 
+      System::Void printPythagoreanNumbersToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+      
+          PythagoreanNumbersApp::MainForm^ myForm = gcnew PythagoreanNumbersApp::MainForm();
 
-      myForm->Show();
+          myForm->Show();
+  }
+  private: 
+      System::Void sumBetweenMinMaxToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+          SequenceSumApp::MainForm^ myForm = gcnew SequenceSumApp::MainForm();
+
+          myForm->Show();
+        
+
   }
 
 
@@ -326,6 +339,7 @@ private: System::Void linkLabel3_LinkClicked(System::Object^ sender, System::Win
 }
 private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
 }
+
 
 };
 
