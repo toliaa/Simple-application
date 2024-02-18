@@ -33,6 +33,8 @@ namespace ArithmeticProgressionSumApp {
     private: System::Windows::Forms::Label^ label4;
     private: System::Windows::Forms::Button^ buttonCalculate;
     private: System::Windows::Forms::Label^ labelResult;
+    private: System::Windows::Forms::StatusStrip^ statusStrip1;
+    private: System::Windows::Forms::ToolStripStatusLabel^ toolStripStatusLabel1;
 
     private: System::ComponentModel::Container^ components;
 
@@ -48,6 +50,9 @@ namespace ArithmeticProgressionSumApp {
                this->label4 = (gcnew System::Windows::Forms::Label());
                this->buttonCalculate = (gcnew System::Windows::Forms::Button());
                this->labelResult = (gcnew System::Windows::Forms::Label());
+               this->statusStrip1 = (gcnew System::Windows::Forms::StatusStrip());
+               this->toolStripStatusLabel1 = (gcnew System::Windows::Forms::ToolStripStatusLabel());
+               this->statusStrip1->SuspendLayout();
                this->SuspendLayout();
                // 
                // label1
@@ -63,7 +68,7 @@ namespace ArithmeticProgressionSumApp {
                // textBoxFirstTerm
                // 
                this->textBoxFirstTerm->Location = System::Drawing::Point(168, 31);
-               this->textBoxFirstTerm->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+               this->textBoxFirstTerm->Margin = System::Windows::Forms::Padding(4);
                this->textBoxFirstTerm->Name = L"textBoxFirstTerm";
                this->textBoxFirstTerm->Size = System::Drawing::Size(132, 22);
                this->textBoxFirstTerm->TabIndex = 1;
@@ -71,7 +76,7 @@ namespace ArithmeticProgressionSumApp {
                // textBoxCommonDifference
                // 
                this->textBoxCommonDifference->Location = System::Drawing::Point(168, 78);
-               this->textBoxCommonDifference->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+               this->textBoxCommonDifference->Margin = System::Windows::Forms::Padding(4);
                this->textBoxCommonDifference->Name = L"textBoxCommonDifference";
                this->textBoxCommonDifference->Size = System::Drawing::Size(132, 22);
                this->textBoxCommonDifference->TabIndex = 2;
@@ -79,7 +84,7 @@ namespace ArithmeticProgressionSumApp {
                // textBoxNumberOfTerms
                // 
                this->textBoxNumberOfTerms->Location = System::Drawing::Point(168, 124);
-               this->textBoxNumberOfTerms->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+               this->textBoxNumberOfTerms->Margin = System::Windows::Forms::Padding(4);
                this->textBoxNumberOfTerms->Name = L"textBoxNumberOfTerms";
                this->textBoxNumberOfTerms->Size = System::Drawing::Size(132, 22);
                this->textBoxNumberOfTerms->TabIndex = 3;
@@ -117,7 +122,7 @@ namespace ArithmeticProgressionSumApp {
                // buttonCalculate
                // 
                this->buttonCalculate->Location = System::Drawing::Point(182, 154);
-               this->buttonCalculate->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+               this->buttonCalculate->Margin = System::Windows::Forms::Padding(4);
                this->buttonCalculate->Name = L"buttonCalculate";
                this->buttonCalculate->Size = System::Drawing::Size(100, 28);
                this->buttonCalculate->TabIndex = 7;
@@ -134,11 +139,27 @@ namespace ArithmeticProgressionSumApp {
                this->labelResult->Size = System::Drawing::Size(0, 16);
                this->labelResult->TabIndex = 8;
                // 
+               // statusStrip1
+               // 
+               this->statusStrip1->ImageScalingSize = System::Drawing::Size(20, 20);
+               this->statusStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(1) { this->toolStripStatusLabel1 });
+               this->statusStrip1->Location = System::Drawing::Point(0, 249);
+               this->statusStrip1->Name = L"statusStrip1";
+               this->statusStrip1->Size = System::Drawing::Size(379, 26);
+               this->statusStrip1->TabIndex = 9;
+               this->statusStrip1->Text = L"statusStrip1";
+               // 
+               // toolStripStatusLabel1
+               // 
+               this->toolStripStatusLabel1->Name = L"toolStripStatusLabel1";
+               this->toolStripStatusLabel1->Size = System::Drawing::Size(0, 20);
+               // 
                // MainForm
                // 
                this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
                this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-               this->ClientSize = System::Drawing::Size(379, 230);
+               this->ClientSize = System::Drawing::Size(379, 275);
+               this->Controls->Add(this->statusStrip1);
                this->Controls->Add(this->labelResult);
                this->Controls->Add(this->buttonCalculate);
                this->Controls->Add(this->label4);
@@ -148,9 +169,12 @@ namespace ArithmeticProgressionSumApp {
                this->Controls->Add(this->textBoxCommonDifference);
                this->Controls->Add(this->textBoxFirstTerm);
                this->Controls->Add(this->label1);
-               this->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+               this->Margin = System::Windows::Forms::Padding(4);
                this->Name = L"MainForm";
                this->Text = L"Arithmetic Progression Sum Calculator";
+               this->Load += gcnew System::EventHandler(this, &MainForm::MainForm_Load);
+               this->statusStrip1->ResumeLayout(false);
+               this->statusStrip1->PerformLayout();
                this->ResumeLayout(false);
                this->PerformLayout();
 
@@ -159,18 +183,26 @@ namespace ArithmeticProgressionSumApp {
 
     private:
         System::Void buttonCalculate_Click(System::Object^ sender, System::EventArgs^ e) {
-            // Parse input values
-            double firstTerm = Double::Parse(textBoxFirstTerm->Text);
-            double commonDifference = Double::Parse(textBoxCommonDifference->Text);
-            int numberOfTerms = Int32::Parse(textBoxNumberOfTerms->Text);
+            try {
+                // Parse input values
+                double firstTerm = Double::Parse(textBoxFirstTerm->Text);
+                double commonDifference = Double::Parse(textBoxCommonDifference->Text);
+                int numberOfTerms = Int32::Parse(textBoxNumberOfTerms->Text);
 
-            // Calculate the sum of the arithmetic progression
-            double sum = (numberOfTerms * (2 * firstTerm + (numberOfTerms - 1) * commonDifference)) / 2;
+                // Calculate the sum of the arithmetic progression
+                double sum = (numberOfTerms * (2 * firstTerm + (numberOfTerms - 1) * commonDifference)) / 2;
 
-            // Display the result
-            labelResult->Text = "Sum of the terms: " + sum.ToString();
+                // Display the result
+                labelResult->Text = "Sum of the terms: " + sum.ToString();
+                toolStripStatusLabel1->Text = "Calculation successful";
+            }
+            catch (FormatException^) {
+                toolStripStatusLabel1->Text = "Invalid input. Please enter valid numbers.";
+            }
         }
 
 
-};
+    private: System::Void MainForm_Load(System::Object^ sender, System::EventArgs^ e) {
+    }
+    };
 }

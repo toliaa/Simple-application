@@ -29,6 +29,8 @@ namespace AccessControlApp {
     private: System::Windows::Forms::TextBox^ textBoxPassword;
     private: System::Windows::Forms::Button^ buttonSubmit;
     private: System::Windows::Forms::Label^ labelResult;
+    private: System::Windows::Forms::StatusStrip^ statusStrip1;
+    private: System::Windows::Forms::ToolStripStatusLabel^ toolStripStatusLabel1;
 
     private: System::ComponentModel::Container^ components;
 
@@ -39,6 +41,9 @@ namespace AccessControlApp {
                this->textBoxPassword = (gcnew System::Windows::Forms::TextBox());
                this->buttonSubmit = (gcnew System::Windows::Forms::Button());
                this->labelResult = (gcnew System::Windows::Forms::Label());
+               this->statusStrip1 = (gcnew System::Windows::Forms::StatusStrip());
+               this->toolStripStatusLabel1 = (gcnew System::Windows::Forms::ToolStripStatusLabel());
+               this->statusStrip1->SuspendLayout();
                this->SuspendLayout();
                // 
                // label1
@@ -54,7 +59,7 @@ namespace AccessControlApp {
                // textBoxPassword
                // 
                this->textBoxPassword->Location = System::Drawing::Point(175, 12);
-               this->textBoxPassword->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+               this->textBoxPassword->Margin = System::Windows::Forms::Padding(4);
                this->textBoxPassword->Name = L"textBoxPassword";
                this->textBoxPassword->PasswordChar = '*';
                this->textBoxPassword->Size = System::Drawing::Size(132, 22);
@@ -63,7 +68,7 @@ namespace AccessControlApp {
                // buttonSubmit
                // 
                this->buttonSubmit->Location = System::Drawing::Point(21, 57);
-               this->buttonSubmit->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+               this->buttonSubmit->Margin = System::Windows::Forms::Padding(4);
                this->buttonSubmit->Name = L"buttonSubmit";
                this->buttonSubmit->Size = System::Drawing::Size(100, 28);
                this->buttonSubmit->TabIndex = 2;
@@ -80,19 +85,39 @@ namespace AccessControlApp {
                this->labelResult->Size = System::Drawing::Size(0, 16);
                this->labelResult->TabIndex = 3;
                // 
-               // AccessForm
+               // statusStrip1
+               // 
+               this->statusStrip1->ImageScalingSize = System::Drawing::Size(20, 20);
+               this->statusStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(1) { this->toolStripStatusLabel1 });
+               this->statusStrip1->Location = System::Drawing::Point(0, 107);
+               this->statusStrip1->Name = L"statusStrip1";
+               this->statusStrip1->Size = System::Drawing::Size(324, 26);
+               this->statusStrip1->TabIndex = 4;
+               this->statusStrip1->Text = L"statusStrip1";
+               // 
+               // toolStripStatusLabel1
+               // 
+               this->toolStripStatusLabel1->Name = L"toolStripStatusLabel1";
+               this->toolStripStatusLabel1->Size = System::Drawing::Size(151, 20);
+               this->toolStripStatusLabel1->Text = L"toolStripStatusLabel1";
+               this->toolStripStatusLabel1->Click += gcnew System::EventHandler(this, &AccessDatabaseForm::toolStripStatusLabel1_Click);
+               // 
+               // AccessDatabaseForm
                // 
                this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
                this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
                this->ClientSize = System::Drawing::Size(324, 133);
+               this->Controls->Add(this->statusStrip1);
                this->Controls->Add(this->labelResult);
                this->Controls->Add(this->buttonSubmit);
                this->Controls->Add(this->textBoxPassword);
                this->Controls->Add(this->label1);
-               this->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
-               this->Name = L"AccessForm";
+               this->Margin = System::Windows::Forms::Padding(4);
+               this->Name = L"AccessDatabaseForm";
                this->Text = L"Access Control";
                this->Load += gcnew System::EventHandler(this, &AccessDatabaseForm::AccessForm_Load);
+               this->statusStrip1->ResumeLayout(false);
+               this->statusStrip1->PerformLayout();
                this->ResumeLayout(false);
                this->PerformLayout();
 
@@ -117,8 +142,11 @@ namespace AccessControlApp {
             else {
                 labelResult->Text = "Invalid password";
             }
+            toolStripStatusLabel1->Text = "Password submitted.";
         }
     private: System::Void AccessForm_Load(System::Object^ sender, System::EventArgs^ e) {
     }
-};
+    private: System::Void toolStripStatusLabel1_Click(System::Object^ sender, System::EventArgs^ e) {
+    }
+    };
 }

@@ -147,4 +147,29 @@
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>60</value>
   </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAA
+        AADtlGN+7ZRj+e2VZP/tlWT/7ZVk/+2VZP/tlWT/7ZVk/+2VZP/tlWT/7ZVk/+2VZP/tlWT/7ZVk/+2U
+        Y/ntlGN+7ZRj+e2VZP/tlWT/7ZVk/+2VZP/tlWT/7ZVk/+2VZP/tlWT/7ZVk/+2VZP/tlWT/7ZVk/+2V
+        ZP/tlWT/7ZRj+e2VZP/tlWT/7ZVk/+2VZP/tlWT/7ZVk/+2VZP/tlWT/7ZVk/+2VZP/tlWT/7ZVk/+2V
+        ZP/tlWT/7ZVk/+2VZP/tlWT/7ZVk/+2VZP/tlWT/7ZVk/+2VZP/tlWT/i1c6/4hWOf/tlWT/7ZVk/+2V
+        ZP/tlWT/7ZVk/+2VZP/tlWT/7ZVk/+2VZP/tlWT/7ZVk/+2VZP/tlWT/7ZVk/3ZKMf9ySDD/7ZVk/+2V
+        ZP/tlWT/7ZVk/+2VZP/tlWT/7ZVk/+2VZP/tlWT/7ZVk/+2VZP/tlWT/7ZVk/+2VZP92SjH/ckgw/+2V
+        ZP/tlWT/7ZVk/+2VZP/tlWT/7ZVk/+2VZP/tlWT/7ZVk/+2VZP/tlWT/7ZVk/+2VZP/tlWT/dkox/3JI
+        MP/tlWT/7ZVk/+2VZP/tlWT/7ZVk/+2VZP/tlWT/7ZVk/+2VZP/tlWT/7ZVk/+2VZP/tlWT/7ZVk/3ZK
+        Mf9ySDD/7ZVk/+2VZP/tlWT/7ZVk/+2VZP/tlWT/7ZVk/+2VZP/tlWT/7ZVk/+2VZP/tlWT/7ZVk/+2V
+        ZP92SjH/ckgw/+2VZP/tlWT/7ZVk/+2VZP/tlWT/7ZVk/+2VZP/tlWT/7ZVk/+2VZP/tlWT/7ZVk/+2V
+        ZP/tlWT/dkox/3JIMP/tlWT/7ZVk/+2VZP/tlWT/7ZVk/+2VZP/tlWT/7ZVk/+2VZP/tlWT/7ZVk/+2V
+        ZP/tlWT/7ZVk/3ZKMf9ySDD/7ZVk/+2VZP/tlWT/7ZVk/+2VZP/tlWT/7ZVk/+2VZP/tlWT/7ZVk/+2V
+        ZP/di13/24lc/9uJXP9tRC7/akIs/9uJXP/biVz/3Ytd/+2VZP/tlWT/7ZVk/+2VZP/tlWT/7ZVk/+2V
+        ZP/tlWT/RCsd/y4dE/8uHRP/Lh0T/y4dE/8uHRP/Lh0T/0EpG//tlWT/7ZVk/+2VZP/tlWT/7ZVk/+2V
+        ZP/tlWT/7ZVk/+2VZP/tlWT/7ZVk/+2VZP/tlWT/7ZVk/+2VZP/tlWT/7ZVk/+2VZP/tlWT/7ZVk/+2U
+        Y/ntlWT/7ZVk/+2VZP/tlWT/7ZVk/+2VZP/tlWT/7ZVk/+2VZP/tlWT/7ZVk/+2VZP/tlWT/7ZVk/+2U
+        Y/ntlGN+7ZRj+e2VZP/tlWT/7ZVk/+2VZP/tlWT/7ZVk/+2VZP/tlWT/7ZVk/+2VZP/tlWT/7ZVk/+2U
+        Y/ntlGN+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAA==
+</value>
+  </data>
 </root>

@@ -106,6 +106,7 @@ namespace expressionvalue1 {
                // 
                // expressionValueToolStripMenuItem
                // 
+               this->expressionValueToolStripMenuItem->BackColor = System::Drawing::Color::DarkCyan;
                this->expressionValueToolStripMenuItem->ImageScaling = System::Windows::Forms::ToolStripItemImageScaling::None;
                this->expressionValueToolStripMenuItem->Name = L"expressionValueToolStripMenuItem";
                this->expressionValueToolStripMenuItem->Size = System::Drawing::Size(295, 26);
@@ -249,6 +250,7 @@ namespace expressionvalue1 {
                this->Controls->Add(this->label1);
                this->Controls->Add(this->statusStrip1);
                this->Controls->Add(this->menuStrip1);
+               this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
                this->MainMenuStrip = this->menuStrip1;
                this->Margin = System::Windows::Forms::Padding(4);
                this->Name = L"MyForm";

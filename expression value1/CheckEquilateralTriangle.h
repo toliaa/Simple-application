@@ -132,17 +132,17 @@ namespace EquilateralTriangleChecker {
                // 
                this->statusStrip1->ImageScalingSize = System::Drawing::Size(20, 20);
                this->statusStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(1) { this->toolStripStatusLabel1 });
-               this->statusStrip1->Location = System::Drawing::Point(0, 186);
+               this->statusStrip1->Location = System::Drawing::Point(0, 188);
                this->statusStrip1->Name = L"statusStrip1";
-               this->statusStrip1->Size = System::Drawing::Size(486, 26);
+               this->statusStrip1->Size = System::Drawing::Size(486, 24);
                this->statusStrip1->TabIndex = 8;
                this->statusStrip1->Text = L"statusStrip1";
                // 
                // toolStripStatusLabel1
                // 
                this->toolStripStatusLabel1->Name = L"toolStripStatusLabel1";
-               this->toolStripStatusLabel1->Size = System::Drawing::Size(151, 20);
-               this->toolStripStatusLabel1->Text = L"toolStripStatusLabel1";
+               this->toolStripStatusLabel1->Size = System::Drawing::Size(0, 18);
+               this->toolStripStatusLabel1->Click += gcnew System::EventHandler(this, &EquilateralTriangleCheckerForm::toolStripStatusLabel1_Click);
                // 
                // label4
                // 
@@ -184,24 +184,32 @@ namespace EquilateralTriangleChecker {
 #pragma endregion
 
     private: System::Void buttonCheck_Click(System::Object^ sender, System::EventArgs^ e) {
-        // Зчитування значень сторін трикутника
-        double a = System::Convert::ToDouble(textBoxA->Text);
-        double b = System::Convert::ToDouble(textBoxB->Text);
-        double c = System::Convert::ToDouble(textBoxC->Text);
+        try {
+            // Зчитування значень сторін трикутника
+            double a = System::Convert::ToDouble(textBoxA->Text);
+            double b = System::Convert::ToDouble(textBoxB->Text);
+            double c = System::Convert::ToDouble(textBoxC->Text);
 
-        // Перевірка чи є трикутник рівностороннім і виведення результату
-        bool isEquilateral = (a == b) && (b == c);
-        labelResult->Text = isEquilateral ? "Equilateral Triangle" : "Not an Equilateral Triangle";
+            // Перевірка чи є трикутник рівностороннім і виведення результату
+            bool isEquilateral = (a == b) && (b == c);
+            labelResult->Text = isEquilateral ? "Equilateral Triangle" : "Not an Equilateral Triangle";
+            toolStripStatusLabel1->Text = "Triangle checked successfully.";
+        }
+        catch (FormatException^) {
+            toolStripStatusLabel1->Text = "Invalid input. Please enter valid numbers for triangle sides.";
+        }
     }
     private: System::Void MainForm_Load(System::Object^ sender, System::EventArgs^ e) {
     }
-private: System::Void textBoxB_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void label2_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void label4_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-};
+    private: System::Void textBoxB_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+    }
+    private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
+    }
+    private: System::Void label2_Click(System::Object^ sender, System::EventArgs^ e) {
+    }
+    private: System::Void label4_Click(System::Object^ sender, System::EventArgs^ e) {
+    }
+    private: System::Void toolStripStatusLabel1_Click(System::Object^ sender, System::EventArgs^ e) {
+    }
+    };
 }

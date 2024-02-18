@@ -28,6 +28,9 @@ namespace PythagoreanNumbersApp {
     private: System::Windows::Forms::TextBox^ textBoxN;
     private: System::Windows::Forms::Button^ buttonPrint;
     private: System::Windows::Forms::ListBox^ listBoxPythagoreanNumbers;
+    private: System::Windows::Forms::StatusStrip^ statusStrip1;
+    private: System::Windows::Forms::ToolStripStatusLabel^ toolStripStatusLabel1;
+    private: System::Windows::Forms::Label^ label2;
     private: System::ComponentModel::Container^ components;
 
 #pragma region Windows Form Designer generated code
@@ -37,6 +40,10 @@ namespace PythagoreanNumbersApp {
                this->textBoxN = (gcnew System::Windows::Forms::TextBox());
                this->buttonPrint = (gcnew System::Windows::Forms::Button());
                this->listBoxPythagoreanNumbers = (gcnew System::Windows::Forms::ListBox());
+               this->statusStrip1 = (gcnew System::Windows::Forms::StatusStrip());
+               this->toolStripStatusLabel1 = (gcnew System::Windows::Forms::ToolStripStatusLabel());
+               this->label2 = (gcnew System::Windows::Forms::Label());
+               this->statusStrip1->SuspendLayout();
                this->SuspendLayout();
                // 
                // label1
@@ -52,7 +59,7 @@ namespace PythagoreanNumbersApp {
                // textBoxN
                // 
                this->textBoxN->Location = System::Drawing::Point(111, 12);
-               this->textBoxN->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+               this->textBoxN->Margin = System::Windows::Forms::Padding(4);
                this->textBoxN->Name = L"textBoxN";
                this->textBoxN->Size = System::Drawing::Size(132, 22);
                this->textBoxN->TabIndex = 1;
@@ -60,7 +67,7 @@ namespace PythagoreanNumbersApp {
                // buttonPrint
                // 
                this->buttonPrint->Location = System::Drawing::Point(253, 10);
-               this->buttonPrint->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+               this->buttonPrint->Margin = System::Windows::Forms::Padding(4);
                this->buttonPrint->Name = L"buttonPrint";
                this->buttonPrint->Size = System::Drawing::Size(100, 28);
                this->buttonPrint->TabIndex = 2;
@@ -73,24 +80,54 @@ namespace PythagoreanNumbersApp {
                this->listBoxPythagoreanNumbers->FormattingEnabled = true;
                this->listBoxPythagoreanNumbers->ItemHeight = 16;
                this->listBoxPythagoreanNumbers->Location = System::Drawing::Point(21, 60);
-               this->listBoxPythagoreanNumbers->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+               this->listBoxPythagoreanNumbers->Margin = System::Windows::Forms::Padding(4);
                this->listBoxPythagoreanNumbers->Name = L"listBoxPythagoreanNumbers";
                this->listBoxPythagoreanNumbers->Size = System::Drawing::Size(331, 244);
                this->listBoxPythagoreanNumbers->TabIndex = 3;
+               this->listBoxPythagoreanNumbers->SelectedIndexChanged += gcnew System::EventHandler(this, &MainForm::listBoxPythagoreanNumbers_SelectedIndexChanged);
+               // 
+               // statusStrip1
+               // 
+               this->statusStrip1->ImageScalingSize = System::Drawing::Size(20, 20);
+               this->statusStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(1) { this->toolStripStatusLabel1 });
+               this->statusStrip1->Location = System::Drawing::Point(0, 326);
+               this->statusStrip1->Name = L"statusStrip1";
+               this->statusStrip1->Size = System::Drawing::Size(379, 22);
+               this->statusStrip1->TabIndex = 4;
+               this->statusStrip1->Text = L"statusStrip1";
+               // 
+               // toolStripStatusLabel1
+               // 
+               this->toolStripStatusLabel1->Name = L"toolStripStatusLabel1";
+               this->toolStripStatusLabel1->Size = System::Drawing::Size(0, 16);
+               this->toolStripStatusLabel1->Click += gcnew System::EventHandler(this, &MainForm::toolStripStatusLabel1_Click);
+               // 
+               // label2
+               // 
+               this->label2->AutoSize = true;
+               this->label2->Location = System::Drawing::Point(66, 38);
+               this->label2->Name = L"label2";
+               this->label2->Size = System::Drawing::Size(230, 16);
+               this->label2->TabIndex = 5;
+               this->label2->Text = L"enter numbers separated by commas";
                // 
                // MainForm
                // 
                this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
                this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-               this->ClientSize = System::Drawing::Size(379, 321);
+               this->ClientSize = System::Drawing::Size(379, 348);
+               this->Controls->Add(this->label2);
+               this->Controls->Add(this->statusStrip1);
                this->Controls->Add(this->listBoxPythagoreanNumbers);
                this->Controls->Add(this->buttonPrint);
                this->Controls->Add(this->textBoxN);
                this->Controls->Add(this->label1);
-               this->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+               this->Margin = System::Windows::Forms::Padding(4);
                this->Name = L"MainForm";
                this->Text = L"Pythagorean Numbers Printer";
                this->Load += gcnew System::EventHandler(this, &MainForm::MainForm_Load);
+               this->statusStrip1->ResumeLayout(false);
+               this->statusStrip1->PerformLayout();
                this->ResumeLayout(false);
                this->PerformLayout();
 
@@ -103,7 +140,12 @@ namespace PythagoreanNumbersApp {
             listBoxPythagoreanNumbers->Items->Clear();
 
             // Parse input value of N
-            int N = Int32::Parse(textBoxN->Text);
+            String^ inputText = textBoxN->Text;
+            int N;
+            if (!Int32::TryParse(inputText, N)) {
+                toolStripStatusLabel1->Text = "Invalid input"; // Виведення помилки у випадку некоректного вводу
+                return;
+            }
 
             // Print Pythagorean numbers less than N
             for (int a = 1; a < N; ++a) {
@@ -118,5 +160,9 @@ namespace PythagoreanNumbersApp {
         }
     private: System::Void MainForm_Load(System::Object^ sender, System::EventArgs^ e) {
     }
-};
+    private: System::Void listBoxPythagoreanNumbers_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
+    }
+    private: System::Void toolStripStatusLabel1_Click(System::Object^ sender, System::EventArgs^ e) {
+    }
+    };
 }
