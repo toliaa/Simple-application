@@ -124,6 +124,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MyForm.cpp" />
     <ClCompile Include="MyForm1.cpp" />
+    <ClCompile Include="PythagoreanNumbers.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AccessControlDatabase.h">
@@ -136,6 +137,9 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="ArithmeticProgression.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="PythagoreanNumbers.h">
       <FileType>CppForm</FileType>
     </ClInclude>
   </ItemGroup>
