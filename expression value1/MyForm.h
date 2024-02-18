@@ -156,6 +156,7 @@ namespace expressionvalue1 {
                // 
                // countCharactersBeforeColonToolStripMenuItem
                // 
+               this->countCharactersBeforeColonToolStripMenuItem->BackColor = System::Drawing::Color::CornflowerBlue;
                this->countCharactersBeforeColonToolStripMenuItem->Name = L"countCharactersBeforeColonToolStripMenuItem";
                this->countCharactersBeforeColonToolStripMenuItem->Size = System::Drawing::Size(295, 26);
                this->countCharactersBeforeColonToolStripMenuItem->Text = L"Count Characters Before Colon";
