@@ -6,6 +6,7 @@
 #include "PythagoreanNumbers.h"
 #include "SumBetweenMinMax.h"
 #include "ExpressionValue.h"
+#include "CountCharactersBeforeColon.h"
 
 namespace expressionvalue1 {
     using namespace System::Diagnostics;
@@ -158,6 +159,7 @@ namespace expressionvalue1 {
                this->countCharactersBeforeColonToolStripMenuItem->Name = L"countCharactersBeforeColonToolStripMenuItem";
                this->countCharactersBeforeColonToolStripMenuItem->Size = System::Drawing::Size(295, 26);
                this->countCharactersBeforeColonToolStripMenuItem->Text = L"Count Characters Before Colon";
+               this->countCharactersBeforeColonToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::countCharactersBeforeColonToolStripMenuItem_Click);
                // 
                // statusStrip1
                // 
@@ -326,6 +328,12 @@ namespace expressionvalue1 {
 
       myForm->Show();
   }
+  private: System::Void countCharactersBeforeColonToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+      CharacterCountApp::MainForm^ myForm = gcnew CharacterCountApp::MainForm();
+
+      myForm->Show();
+
+  }
 
 
 
@@ -348,6 +356,7 @@ private: System::Void linkLabel3_LinkClicked(System::Object^ sender, System::Win
 }
 private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
 }
+
 
 
 
