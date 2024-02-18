@@ -5,6 +5,7 @@
 #include "AccessControlDatabase.h"
 #include "PythagoreanNumbers.h"
 #include "SumBetweenMinMax.h"
+#include "ExpressionValue.h"
 
 namespace expressionvalue1 {
     using namespace System::Diagnostics;
@@ -109,6 +110,7 @@ namespace expressionvalue1 {
                this->expressionValueToolStripMenuItem->Name = L"expressionValueToolStripMenuItem";
                this->expressionValueToolStripMenuItem->Size = System::Drawing::Size(295, 26);
                this->expressionValueToolStripMenuItem->Text = L"Expression value";
+               this->expressionValueToolStripMenuItem->Click += gcnew System::EventHandler(this, &MyForm::expressionValueToolStripMenuItem_Click);
                // 
                // arithmeticProgressionSumToolStripMenuItem
                // 
@@ -317,6 +319,11 @@ namespace expressionvalue1 {
         
 
   }
+  private: System::Void expressionValueToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+      ExpressionCalculator::MainForm^ myForm = gcnew ExpressionCalculator::MainForm();
+
+      myForm->Show();
+  }
 
 
 
@@ -339,6 +346,7 @@ private: System::Void linkLabel3_LinkClicked(System::Object^ sender, System::Win
 }
 private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
 }
+
 
 
 };

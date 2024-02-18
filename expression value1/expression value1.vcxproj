@@ -163,6 +163,9 @@
     <EmbeddedResource Include="CheckEquilateralTriangle.resx">
       <DependentUpon>CheckEquilateralTriangle.h</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ExpressionValue.resx">
+      <DependentUpon>ExpressionValue.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MyForm.en-US.resx">
       <DependentUpon>MyForm.h</DependentUpon>
     </EmbeddedResource>
